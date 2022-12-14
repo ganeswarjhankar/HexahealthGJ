@@ -40,11 +40,15 @@ driver.refresh()
 
 time.sleep(5)
 
-###################driver.execute_script("window.scrollBy(0,document.body.scrollHeight)")
-CallButton =driver.find_element(By.XPATH,"//input[@id='contactnum1']")
-driver.execute_script("arguments[0].scrollIntoView();",CallButton)
-CallButton.send_keys("1000000459")
-driver.find_element(By.XPATH,"//button[@id='LeadSubmit1_marketing']").click()
+
+
+
+####################Verify CallButton##############################
+#driver.execute_script("window.scrollBy(0,document.body.scrollHeight)")
+#CallButton =driver.find_element(By.XPATH,"//input[@id='contactnum1']").send_keys("1000000459")
+#driver.execute_script("arguments[0].scrollIntoView();",CallButton)
+#CallButton.send_keys("1000000459")
+#driver.find_element(By.XPATH,"//button[@id='LeadSubmit1_marketing']").click()
 ####################Verify CallButton##############################
 
 

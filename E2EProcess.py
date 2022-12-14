@@ -50,7 +50,7 @@ driver.find_element(By.XPATH,"/html/body/app-root/app-shop/div/app-checkout/div/
 driver.find_element(By.XPATH,"/html/body/app-root/app-shop/div/app-checkout/div/form/input").click()
 SuccessText = driver.find_element(By.XPATH,"/html/body/app-root/app-shop/div/app-checkout/div[2]/div").text
 
-assert  "Success! Thank you!" in SuccessText
+assert "Success! Thank you!" in SuccessText
 
 
 

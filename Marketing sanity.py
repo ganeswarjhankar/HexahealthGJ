@@ -34,7 +34,7 @@ driver.back()
 driver.refresh()
 #Cross = driver.find_element(By.XPATH,"//*[@id='DivCostInsurance']/button")
 #driver.execute_script("arguments[0].click();", Cross)
-# Verify the Check Insurance Coverage Link
+# Verify the Check Insurance Coveragpye Link
 Insurance = driver.find_element(By.XPATH,"//*[@id='insurancetBtn']/span/strong")
 driver.execute_script("arguments[0].click();", Insurance)
 driver.find_element(By.XPATH,"//*[@id='leadname2']").send_keys("Test Insurance check sanity")

@@ -48,11 +48,12 @@ driver.back()
 time.sleep(3)
 
 
+
 # Sleep the process
 
 # Back the Page
 #driver.back()
-time.sleep(5)
+
 # Verify the surgery cost and check the Forms
 SurgeryCost = driver.find_element(By.XPATH,"//*[@id='surgerytBtn']/span")
 driver.execute_script("arguments[0].click();, SurgeryCost")

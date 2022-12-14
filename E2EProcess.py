@@ -1,4 +1,4 @@
-#--time
+#time
 import time
 #--Selenium webdriver
 from selenium import webdriver

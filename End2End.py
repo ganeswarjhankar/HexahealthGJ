@@ -1,4 +1,4 @@
-#--time
+#time
 import time
 #--Selenium webdriver
 from selenium import webdriver
@@ -27,6 +27,7 @@ for x in Mobilelist:
     if blackberry == "Blackberry":
         x.find_element(By.XPATH,"div/button").click()
 else:
+    time.sleep(4)
     driver.close()
 
 

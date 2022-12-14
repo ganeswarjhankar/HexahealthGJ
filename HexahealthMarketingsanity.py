@@ -21,6 +21,7 @@ driver.find_element(By.XPATH,"//*[@id='LeadSubmit']").click()
 time.sleep(3)
 
 driver.back()
+driver.refresh()
 
 #driver.find_element(By.XPATH,"/html/body/div[1]/div[2]/div/div/div[2]/div/i").click()
 #time.sleep(3)

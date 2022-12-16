@@ -1,4 +1,5 @@
 import random
+import time
 
 from selenium.webdriver.support.wait import WebDriverWait
 
@@ -27,6 +28,8 @@ url = random.choice(urls)
 driver.get(url)
 driver.maximize_window()
 
+
+
 if url == "https://www.hexahealth.com":
         driver.find_element(By.XPATH, "//input[@id='txtArticls']").send_keys("Apollo Hospital")
         wait = WebDriverWait(driver, 10)
@@ -35,8 +38,20 @@ if url == "https://www.hexahealth.com":
         BannerMessage = driver.find_element(By.XPATH,"//h1[@class='banner-title mb-3']") .text
         assert "Apollo Hospital, Noida" in BannerMessage
 
-elif url == "https://www.hexahealth.com/marketing/lasik-bangalore":
+        driver.get(url)
+        # Lets open https://www.bing.com/ in the second tab
+        driver.execute_script("window.open('about:blank','secondtab');")
+        driver.switch_to.window("secondtab")
+
+
+
+
+elif url == "https://www.hexhealth.com":
         pass
+
+
+
+
 
 
 elif url == "https://www.hexahealth.com/campaigns/liver-transplant":
@@ -44,6 +59,10 @@ elif url == "https://www.hexahealth.com/campaigns/liver-transplant":
 
 
 else:
-        print("sorry better luck next Tim")
+        print("sorry better luck next Time")
+
+#driver.close()
+
+
 
 

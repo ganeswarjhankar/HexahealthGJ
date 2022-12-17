@@ -66,6 +66,7 @@ time.sleep(2)
 ThankYou = driver.find_element(By.XPATH,"//h1[@class='thankyou-title']").text
 print("Passed","CallButton")
 driver.refresh()
+#driver.close()
 
 
 

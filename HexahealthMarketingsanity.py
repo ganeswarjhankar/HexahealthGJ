@@ -28,7 +28,7 @@ driver.refresh()
 # Fold 2 validation and submit form
 driver.find_element(By.XPATH,"//input[@id='leadnameMobile1']").send_keys("Fold 2  test check marketing")
 driver.find_element(By.XPATH,"//input[@id='contactnumobile1']").send_keys("1000000090")
-driver.find_element(By.XPATH)
+driver.find_element(By.XPATH,"//button[@id='LeadSubmitMobile']").click()
 time.sleep(3)
 
 #driver.find_element(By.XPATH,"//i[@class='icon fas fa-calculator']").click()

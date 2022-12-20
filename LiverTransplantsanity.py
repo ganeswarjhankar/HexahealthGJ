@@ -23,10 +23,10 @@ driver.implicitly_wait(5)
 
 driver.maximize_window()
 #Verify the Fre consultation button
-driver.find_element(By.XPATH,"//*[@id='bkapntconslt']").click()
-driver.find_element(By.XPATH,"//*[@id='leadname2']").send_keys("Fold Test LT Page ")
-driver.find_element(By.XPATH,"//*[@id='contactnum2']").send_keys("1000000031")
-driver.find_element(By.XPATH,"//*[@id='LeadSubmitNewHome']").click()
+driver.find_element(By.XPATH, "//*[@id='bkapntconslt']").click()
+driver.find_element(By.XPATH, "//*[@id='leadname2']").send_keys("Fold Test LT Page ")
+driver.find_element(By.XPATH, "//*[@id='contactnum2']").send_keys("1000000031")
+driver.find_element(By.XPATH, "//*[@id='LeadSubmitNewHome']").click()
 # Time Sleep
 time.sleep(5)
 driver.back()
@@ -37,10 +37,10 @@ driver.refresh()
 
 
 # Verify the whatsApp Button
-WhatsApp = driver.find_element(By.XPATH,"//*[@id='whstpconslt']")
-WhatsApp.click()
-time.sleep(3)
-driver.back()
+#WhatsApp = driver.find_element(By.XPATH,"//*[@id='whstpconslt']").click()
+#WhatsApp.click()
+#time.sleep(3)
+#driver.back()
 
 #appointment = driver.find_element(By.LINK_TEXT,"Book Appointment")
 #driver.execute_script("arguments[0].click();",appointment)
@@ -56,7 +56,8 @@ time.sleep(3)
 
 # Verify the surgery cost and check the Forms
 SurgeryCost = driver.find_element(By.XPATH,"//*[@id='surgerytBtn']/span")
-driver.execute_script("arguments[0].click();, SurgeryCost")
+driver.execute_script("arguments[0].click();", SurgeryCost)
+time.sleep(3)
 driver.find_element(By.XPATH,"//*[@id='leadname2']").send_keys("GoodLucktest")
 driver.find_element(By.XPATH,"//*[@id='contactnum2']").send_keys("1000000043")
 driver.find_element(By.XPATH,"//*[@id='LeadSubmit2']").click()
@@ -66,10 +67,12 @@ driver.refresh()
 #Cross = driver.find_element(By.XPATH,"//*[@id='DivCostInsurance']/button")
 #driver.execute_script("arguments[0].click();", Cross)
 
-# Verify the Check Insurance Coverage Link
+################################Verify the Check Insurance Coverage Link##########
 
 Insurance = driver.find_element(By.XPATH,"//*[@id='insurancetBtn']/span/strong")
+driver.implicitly_wait(15)
 driver.execute_script("arguments[0].click();, Insurance")
+driver.implicitly_wait(10)
 driver.find_element(By.XPATH,"//*[@id='leadname2']").send_keys("Test Insurance check sanity")
 driver.find_element(By.XPATH,"//*[@id='contactnum2']").send_keys("1000000082")
 driver.find_element(By.XPATH,"//*[@id='LeadSubmit2']").click()

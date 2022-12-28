@@ -2,19 +2,27 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 
 from selenium .webdriver.common.by import By
-from selenium.webdriver.support import expected_conditions
-from selenium.webdriver.support.ui import Select
+#from selenium.webdriver.support import expected_conditions
+#from selenium.webdriver.support.ui import Select
 #from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support.wait import WebDriverWait
 import time
+##########Disable Browser Notification######################
+from selenium.webdriver.chrome.options import Options
+option1 = Options()
+option1.add_argument("---disable-Notifications")
+
+
 
 S=Service("D:\\chromedriver.exe")
 driver=webdriver.Chrome(service=S)
-
-
 URL=driver.get("https://www.hexahealth.com/")
+
 driver.implicitly_wait(12)
 driver.maximize_window()
+#time.sleep(5)
+
+#driver.switch_to.alert.dismiss()
 ############################First fold Form######################################################
 driver.find_element(By.LINK_TEXT,("Get a free second opinion from top surgeons! Book an appointment »")).click()
 time.sleep(5)

@@ -24,6 +24,7 @@ buttons = driver.find_element(By.XPATH,"//*[@id='whtsapHeaderBtn']/span/b").clic
 
 
 
+
     # code to execute on each page goes here
 
     # Get the current URL

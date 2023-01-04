@@ -13,6 +13,9 @@ from selenium.webdriver.chrome.service import Service
 from selenium import webdriver
 import random
 
+from selenium.webdriver.support import expected_conditions
+from selenium.webdriver.support.wait import WebDriverWait
+
 S = Service("D:\\chromedriver.exe")
 driver = webdriver.Chrome(service=S)
 driver.maximize_window()
@@ -33,17 +36,18 @@ time.sleep(2)
 
 if selected_button.is_displayed():
     # click the selected button
-    selected_button.click()
-
+    #selected_button.click()
+    driver.execute_script("arguments[0].scrollIntoView();", selected_button)
+    driver.find_element(By.XPATH, "//*[@id='headerCityClose']").click()
 
 else:
     print("Button is not displayed")
 time.sleep(2)
 
-driver.find_element(By.XPATH, "//*[@id='leadname2']").send_keys("TestDoctorMarketingRandom")
-driver.find_element(By.XPATH, "//*[@id='contactnum2']").send_keys("1000000100")
-element = driver.find_element(By.XPATH, "//*[@id='LeadSubmit2']")
-driver.execute_script("arguments[0].click()", element)
+#driver.find_element(By.XPATH, "//*[@id='leadname2']").send_keys("TestDoctorMarketingRandom")
+#driver.find_element(By.XPATH, "//*[@id='contactnum2']").send_keys("1000000100")
+#element = driver.find_element(By.XPATH, "//*[@id='LeadSubmit2']")
+#driver.execute_script("arguments[0].click()", element)
 
 
 #driver.find_element(By.XPATH,"//*[@id='leadname2']").send_keys("TestDoctorMarketingRandom")

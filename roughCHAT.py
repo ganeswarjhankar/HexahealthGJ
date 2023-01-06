@@ -28,7 +28,7 @@ from selenium import webdriver
 #doctors = driver.find_elements_by_css_selector("css_selector_for_doctors")
 
 # Sort the list of doctors alphabetically by name
-Doctors.sort(key=lambda x: x.By.XPATH,"//div[@class='item card-block']/div/div/h3.text)
+Doctors.sort(key=lambda x: x(By.XPATH,"//div[@class='item card-block']/div/div/h3"))
 
 # Choose a random index from the list of doctors
 index = random.randint(0, len(Doctors) - 1)

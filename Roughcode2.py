@@ -1,42 +1,37 @@
-#####Random doctor display############
-from selenium.webdriver.chrome.service import Service
+import pandas as pd
 
+# Create a sample DataFrame
+data = {'Name': ['John Smith', 'Jane Doe', 'Bob Johnson'],
+        'Age': [35, 28, 45],
+        'City': ['New York', 'San Francisco', 'Chicago']}
+df = pd.DataFrame(data)
+
+# Create an Excel file from the DataFrame
+df.to_excel('data.xlsx', index=False)
+
+"""Automate to click and download the file that has been created as DataFrame"""
 
 from selenium import webdriver
+
+# Start a web driver and navigate to the download page
+driver = webdriver.Firefox()
+driver.get('http://yourwebsite.com/download/data.xlsx')
+
+# Locate the download link and click it
+link = driver.find_element_by_link_text('Download data.xlsx')
+link.click()
+
+# Wait for the download to complete
+# ...
+
+# Close the browser and webdriver
+driver.quit()
+
+"""Wait for the file to download"""
+
+from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
 
-S = Service("D:\\chromedriver.exe")
-driver = webdriver.Chrome(service=S)
-driver.maximize_window()
-url = driver.get("https://www.hexahealth.com/marketing/doctor/laser-fissure-bangalore")
-
-Doctors = driver.find_elements(By.XPATH,"//div[@class='item card-block']/div")
-BookFreeAppointmentButtons = driver.find_elements(By.XPATH,"//div[@class='item card-block']/div/div/a")
-########################################################################################
-DoctorsName = driver.find_elements(By.XPATH,"//div[@class='item card-block']/div/div/h3")
-count1 = len(Doctors)
-#count2 = len(DoctorsName)
-
-#print(count2)
-#print(DoctorsName.text)
-#############################################to print all the names of the Doctor in the marketing Doctor Page
-for perDoctorsName in DoctorsName:
-    print(perDoctorsName.text)
-######################################################################################
-
-##############select any one doctor name and execute the process############################
-#for BookSingleAppointment in Doctors:
-#    BookSingleAppointment.find_element(By.XPATH,"div/a").click()
-
-
-
-
-
-
-
-
-
-
-
-
-
+wait = WebDriverWait(driver, 10)
+wait.until(EC.presence_of_element_located((By.ID, "some_id")))

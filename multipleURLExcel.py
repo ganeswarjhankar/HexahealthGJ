@@ -1,3 +1,5 @@
+"""Open all the Urls in one go with different tabs"""
+
 from openpyxl import load_workbook
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service

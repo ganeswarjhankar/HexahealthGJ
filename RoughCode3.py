@@ -1,56 +1,31 @@
-#import time
-#import requests
-#import response as response
-#from selenium import webdriver
-import time
-
-from selenium.webdriver.common.by import By
-#from selenium.webdriver.support.ui import WebDriverWait
-#from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.chrome.service import Service
-
+"""Class , Method  all in one window for example"""
 
 from selenium import webdriver
-import random
-
-from selenium.webdriver.support import expected_conditions
-from selenium.webdriver.support.wait import WebDriverWait
-
-S = Service("D:\\chromedriver.exe")
-driver = webdriver.Chrome(service=S)
-driver.maximize_window()
-url = driver.get("https://www.hexahealth.com/marketing/doctor/laser-fissure-bangalore")
-time.sleep(2)
-driver.execute_script("window.scrollTo(0, 1000);")
-time.sleep(2)
-# find all the buttons with the same name
-buttons = driver.find_elements(By.XPATH,"//div[@class='doctor']/div/a")
+from selenium.webdriver.common.keys import Keys
 
 
-time.sleep(2)
+class FormFiller:
+    def __init__(self):
+        self.browser = webdriver.Firefox()
 
-# select a single random button
-selected_button = random.choice(buttons)
-print(selected_button)
-time.sleep(2)
+    def fill_form(self, url, form_data):
+        self.browser.get(url)
+        for field, value in form_data.items():
+            elem = self.browser.find_element_by_name(field)
+            elem.clear()
+            elem.send_keys(value)
 
-if selected_button.is_displayed():
-    # click the selected button
-    #selected_button.click()
-    driver.execute_script("arguments[0].scrollIntoView();", selected_button)
-    driver.find_element(By.XPATH, "//*[@id='headerCityClose']").click()
+    def submit(self):
+        elem = self.browser.find_element_by_xpath("//input[@type='submit']")
+        elem.send_keys(Keys.RETURN)
 
-else:
-    print("Button is not displayed")
-time.sleep(2)
-
-#driver.find_element(By.XPATH, "//*[@id='leadname2']").send_keys("TestDoctorMarketingRandom")
-#driver.find_element(By.XPATH, "//*[@id='contactnum2']").send_keys("1000000100")
-#element = driver.find_element(By.XPATH, "//*[@id='LeadSubmit2']")
-#driver.execute_script("arguments[0].click()", element)
+    def close_browser(self):
+        self.browser.quit()
 
 
-#driver.find_element(By.XPATH,"//*[@id='leadname2']").send_keys("TestDoctorMarketingRandom")
-#driver.find_element(By.XPATH,"//*[@id='contactnum2']").send_keys("1000000100")
-#driver.find_element(By.XPATH,"//*[@id='LeadSubmit2']").click()
-
+# Usage example:
+form_filler = FormFiller()
+form_data = {'name': 'John Doe', 'email': 'johndoe@example.com'}
+form_filler.fill_form("http://example.com/form", form_data)
+form_filler.submit()
+form_filler.close_browser()

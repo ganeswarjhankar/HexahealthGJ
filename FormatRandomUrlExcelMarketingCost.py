@@ -36,7 +36,7 @@ class MarketingPage:
                 print("Failed")
 
             finally:
-                print("All the marketing pages are above")
+                print("This is Cost Variant Marketing Pages")
 
         self.driver.quit()
 

@@ -34,7 +34,6 @@ if 'api.' in current_url:
     else:
         print("Failed")
 
-        print('Verification successful')
 
 else:
     print('Verification failed as the URl Not containing "api"')

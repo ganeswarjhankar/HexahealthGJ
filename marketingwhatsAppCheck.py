@@ -19,7 +19,7 @@ class MarketingPage:
         df = pd.read_excel('C:\\Users\\91928\\PycharmProjects\\MarketingWhatApp.xlsx', sheet_name='Sheet1')
 
         # select a random sample of URLs
-        self.urls = df.sample(150, replace=False)['URL']
+        self.urls = df.sample(2, replace=False)['URL']
 
         # open each URL with Selenium and run code for it
         S = Service("D:\\chromedriver.exe")
@@ -33,6 +33,9 @@ class MarketingPage:
                 self.driver.maximize_window()
                 self.driver.implicitly_wait(5)
                 self.driver.find_element(By.XPATH,"//*[@id='whtsapHeaderBtn']").click()
+                #self.driver.switch_to.window(self.driver.window_handles[2])
+                msg = self.driver.find_element(By.XPATH,"//p[@class='_9vd5']")
+                print(msg.text)
 
                 # Get the current URL
                 current_url = self.driver.current_url
@@ -65,6 +68,7 @@ class MarketingPage:
         self.driver.quit()
 
     #def CostVariant2(self):
+
 
 
 

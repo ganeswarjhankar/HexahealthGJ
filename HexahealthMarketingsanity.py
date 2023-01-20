@@ -26,8 +26,11 @@ driver.refresh()
 #driver.find_element(By.XPATH,"/html/body/div[1]/div[2]/div/div/div[2]/div/i").click()
 #time.sleep(3)
 # Fold 2 validation and submit form
+driver.execute_script("window.scrollTo(1000,document.body.scrollHeight)")
 driver.find_element(By.XPATH,"//input[@id='leadnameMobile1']").send_keys("Fold 2  test check marketing")
 driver.find_element(By.XPATH,"//input[@id='contactnumobile1']").send_keys("1000000090")
+time.sleep(2)
+
 driver.find_element(By.XPATH,"//button[@id='LeadSubmitMobile']").click()
 time.sleep(3)
 

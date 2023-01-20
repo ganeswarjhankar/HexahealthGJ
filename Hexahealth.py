@@ -5,7 +5,7 @@ from selenium .webdriver.common.by import By
 #from selenium.webdriver.support import expected_conditions
 #from selenium.webdriver.support.ui import Select
 #from selenium.webdriver.common.action_chains import ActionChains
-from selenium.webdriver.support.wait import WebDriverWait
+#from selenium.webdriver.support.wait import WebDriverWait
 import time
 ##########Disable Browser Notification######################
 from selenium.webdriver.chrome.options import Options
@@ -20,11 +20,11 @@ URL=driver.get("https://www.hexahealth.com/")
 
 driver.implicitly_wait(12)
 driver.maximize_window()
-#time.sleep(5)
+time.sleep(5)
 
 #driver.switch_to.alert.dismiss()
 ############################First fold Form######################################################
-driver.find_element(By.LINK_TEXT,("Get a free second opinion from top surgeons! Book an appointment »")).click()
+driver.find_element(By.LINK_TEXT,("Get a FREE Second Opinion from Top Surgeons! Book an Appointment »")).click()
 time.sleep(5)
 driver.find_element(By.XPATH,"//input[@id='leadname2']").send_keys("Patient test Auto Name check")
 
@@ -50,7 +50,7 @@ time.sleep(3)
 driver.back()
 ###############################2nd Fold Form#########################################
 driver.find_element(By.XPATH,"//input[@id='leadnamehome']").send_keys("Test GJ Auto Check" )
-driver.find_element(By.XPATH,"//input[@id='contactnumhome']").send_keys("1000007968")
+driver.find_element(By.XPATH,"//input[@id='contactnumhome']").send_keys("1000000100")
 #City2 = Select(driver.find_element(By.XPATH,"//select[@id='leadcityhome']"))
 #City2.select_by_visible_text("Delhi - NCR")
 driver.find_element(By.XPATH,"//input[@id='leadcityhome']").send_keys("Bengaluru")

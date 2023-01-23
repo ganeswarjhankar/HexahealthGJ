@@ -1,15 +1,23 @@
 import FormatRandomUrlExcelMarketingCost
 import FormatRandomUrlExcelMarketingDoctor
-import FormatGenerateReports
+#import FormatGenerateReports
+import marketingwhatsAppCheck
 try:
     testcase1 = FormatRandomUrlExcelMarketingDoctor.MarketingDoctorPage()
-    report1 = FormatGenerateReports.ReportGenerator(1)
+    print("Marketing Doctor pages are passed")
 
 except:
-    print("testcase1 failed")
+    print("Marketing Doctor pages are failed")
 
 try:
     testcase2 = FormatRandomUrlExcelMarketingCost.MarketingPage()
+    print("Marketing Cost Pages are passed")
 
 except:
-    print("testcase2 failed")
+    print("Cost variant pages  are failed")
+
+try:
+    testcase3 = marketingwhatsAppCheck.MarketingPage()
+    print("Marketing Whatsapp Pages are  Passed ")
+except:
+    print ("Marketing Whatsapp Pages are  Failed")

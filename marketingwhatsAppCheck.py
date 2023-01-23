@@ -19,13 +19,13 @@ class MarketingPage:
         df = pd.read_excel('C:\\Users\\91928\\PycharmProjects\\MarketingWhatApp.xlsx', sheet_name='Sheet1')
 
         # select a random sample of URLs
-        self.urls = df.sample(2, replace=False)['URL']
+        self.urls = df.sample(3, replace=False)['URL']
 
         # open each URL with Selenium and run code for it
         S = Service("D:\\chromedriver.exe")
         self.driver = webdriver.Chrome(service=S)
 
-    def CostVariant(self):
+    def DisplayVariant(self):
         for url in self.urls:
             self.driver.get(url)
             print([url])
@@ -77,7 +77,7 @@ class MarketingPage:
 # are creating an instance of the MarketingPage class and calling the CostVariant()
 # method on that instance, respectively.
 market_obj1 = MarketingPage()
-market_obj1.CostVariant()
+market_obj1.DisplayVariant()
 
 #market_obj2 = MarketingPage()
 #market_obj2.CostVariant2()

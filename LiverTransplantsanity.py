@@ -26,7 +26,7 @@ driver.maximize_window()
 driver.find_element(By.XPATH, "//*[@id='bkapntconslt']").click()
 
 driver.find_element(By.XPATH, "//*[@id='leadname2']").send_keys("Fold Test LT Page ")
-driver.find_element(By.XPATH, "//*[@id='contactnum2']").send_keys("1000000031")
+driver.find_element(By.XPATH, "//*[@id='contactnum2']").send_keys("1000000100")
 driver.find_element(By.XPATH, "//*[@id='LeadSubmitNewHome']").click()
 # Time Sleep
 time.sleep(5)
@@ -62,7 +62,7 @@ driver.execute_script("arguments[0].click();", SurgeryCost)
 
 #try:
 driver.find_element(By.XPATH,"//*[@id='leadnameSurgery']").send_keys("GoodLucktest Surgery")
-driver.find_element(By.XPATH,"//*[@id='contactnumSurgery']").send_keys("1000000043")
+driver.find_element(By.XPATH,"//*[@id='contactnumSurgery']").send_keys("1000000100")
 driver.find_element(By.XPATH,"//*[@id='leadSubmiCalculateSurgery']").click()
 #except:
     #driver.find_element(By.XPATH,"//*[@id='closemodal']").click()
@@ -82,7 +82,7 @@ driver.execute_script("arguments[0].click();",InsuranceLT)
 
 #try:
 driver.find_element(By.XPATH,"//*[@id='leadnameSurgery']").send_keys("Test Insurance check sanity")
-driver.find_element(By.XPATH,"//*[@id='contactnumSurgery']").send_keys("1000000082")
+driver.find_element(By.XPATH,"//*[@id='contactnumSurgery']").send_keys("1000000100")
 driver.find_element(By.XPATH,"//*[@id='leadSubmiCalculateSurgery']").click()
 #except:
     #driver.find_element(By.XPATH,"//*[@id='closemodal']").click()

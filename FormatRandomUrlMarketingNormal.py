@@ -108,7 +108,7 @@ class MarketingNormalClass:
                 self.driver.find_element(By.XPATH, "//input[@id='leadname2']").send_keys("Test GJ Normal Marketing ")
                 self.driver.find_element(By.XPATH, "//input[@id='contactnum2']").send_keys("1000000100")
                 self.driver.find_element(By.XPATH, "//button[@id='LeadSubmit2']").click()
-                time.sleep(2)
+                #time.sleep(2)
                 # self.driver.back()
                 print("CheckInsuranceCoverage Passed")
             except:

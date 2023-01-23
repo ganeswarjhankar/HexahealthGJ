@@ -32,9 +32,9 @@ class MarketingDoctorPage:
                 self.driver.find_element(By.XPATH, "//input[@id='leadname5']").send_keys("Test GJ Doctor Variant")
                 self.driver.find_element(By.XPATH, "//input[@id='contactnum5']").send_keys("1000000100")
                 self.driver.find_element(By.XPATH, "//button[@id='LeadSubmit']").click()
-                print("Passed")
+                print("DoctorVariant is Passed")
             except:
-                print("Failed")
+                print("DoctorVariant Failed")
 
             finally:
                 print("This is Doctor Variant Marketing Pages")

@@ -28,7 +28,7 @@ driver.find_element(By.LINK_TEXT,("Get a FREE Second Opinion from Top Surgeons! 
 time.sleep(5)
 driver.find_element(By.XPATH,"//input[@id='leadname2']").send_keys("Patient test Auto Name check")
 
-driver.find_element(By.XPATH,"//input[@id='contactnum2']").send_keys("1000006233")
+driver.find_element(By.XPATH,"//input[@id='contactnum2']").send_keys("1000000100")
 driver.find_element(By.XPATH,"//input[@name='leadcity2']").send_keys("Delhi")
 driver.find_element(By.XPATH,"//input[@name='treamentcondition1']").send_keys("ACL Reconstruction Surgery ")
 #driver.find_element(By.XPATH,"//textarea[@xpath='1']")
@@ -75,6 +75,8 @@ ThankYou = driver.find_element(By.XPATH,"//h1[@class='thankyou-title']").text
 print("Passed","CallButton")
 driver.refresh()
 #driver.close()
+
+
 
 
 

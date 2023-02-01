@@ -1,5 +1,5 @@
 from selenium.webdriver.common.by import By
-
+#from FormatPrint import PrintExcel
 
 class MarketingPage:
 
@@ -29,7 +29,9 @@ class MarketingPage:
                 self.driver.maximize_window()
                 self.driver.implicitly_wait(5)
                 self.driver.find_element(By.XPATH, "//input[@id='rNo']").click()
+                self.driver.implicitly_wait(2)
                 self.driver.find_element(By.XPATH, "//input[@id='contactnumhomem']").send_keys("1000000100")
+                self.driver.implicitly_wait(2)
                 self.driver.find_element(By.XPATH, "//button[@id='LeadSubmitCostPageMaster']").click()
                 print("Passed")
             except:
@@ -46,3 +48,6 @@ class MarketingPage:
 # method on that instance, respectively.
 market_obj = MarketingPage()
 market_obj.CostVariant()
+
+
+

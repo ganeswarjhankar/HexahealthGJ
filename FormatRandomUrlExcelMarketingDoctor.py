@@ -2,6 +2,7 @@
 from selenium.webdriver.common.by import By
 
 
+
 class MarketingDoctorPage:
 
     def __init__(self):
@@ -28,9 +29,11 @@ class MarketingDoctorPage:
             print([url])
             try:
                 self.driver.maximize_window()
-                self.driver.implicitly_wait(5)
+                self.driver.implicitly_wait(2)
                 self.driver.find_element(By.XPATH, "//input[@id='leadname5']").send_keys("Test GJ Doctor Variant")
+                self.driver.implicitly_wait(2)
                 self.driver.find_element(By.XPATH, "//input[@id='contactnum5']").send_keys("1000000100")
+                self.driver.implicitly_wait(2)
                 self.driver.find_element(By.XPATH, "//button[@id='LeadSubmit']").click()
                 print("DoctorVariant is Passed")
             except:
@@ -47,3 +50,6 @@ class MarketingDoctorPage:
 # method on that instance, respectively.
 doctor_obj = MarketingDoctorPage()
 doctor_obj.DoctorVariant()
+
+
+

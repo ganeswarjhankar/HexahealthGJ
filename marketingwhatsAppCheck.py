@@ -31,10 +31,13 @@ class MarketingPage:
             print([url])
             try:
                 self.driver.maximize_window()
+
                 self.driver.implicitly_wait(5)
                 self.driver.find_element(By.XPATH,"//*[@id='whtsapHeaderBtn']").click()
+                self.driver.implicitly_wait(2)
                 #self.driver.switch_to.window(self.driver.window_handles[2])
                 msg = self.driver.find_element(By.XPATH,"//p[@class='_9vd5']")
+                self.driver.implicitly_wait(2)
                 print(msg.text)
 
                 # Get the current URL
